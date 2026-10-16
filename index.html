@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f4f2eb">
+  <meta name="description" content="Продажа новых и б/у тахографов, калибровка, ремонт и аренда тахографа для техосмотра.">
+  <title>Тахографы и сервис | Продажа, калибровка, ремонт</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      color-scheme: light;
+      --paper: #f4f2eb;
+      --ink: #18231e;
+      --muted: #66716a;
+      --green: #245342;
+      --lime: #d5ec6b;
+      --line: #d9ddd4;
+      --white: #fffefa;
+      font-family: "DM Sans", sans-serif;
+      font-synthesis: none;
+      text-rendering: optimizeLegibility;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; background: var(--paper); color: var(--ink); }
+    a { color: inherit; }
+    .wrap { width: min(1160px, calc(100% - 48px)); margin: 0 auto; }
+    .topbar { height: 82px; display: flex; align-items: center; border-bottom: 1px solid var(--line); }
+    .nav { display: flex; align-items: center; justify-content: space-between; gap: 28px; }
+    .brand { display: inline-flex; align-items: center; gap: 12px; text-decoration: none; font: 800 16px/1.1 Manrope, sans-serif; }
+    .brand-mark { display: grid; place-items: center; width: 38px; height: 38px; background: var(--lime); border-radius: 50%; color: var(--ink); font-size: 14px; }
+    .nav-links { display: flex; gap: 30px; margin-left: auto; color: var(--muted); font-size: 14px; }
+    .nav-links a { text-decoration: none; }
+    .nav-links a:hover { color: var(--ink); }
+    .phone { font: 700 16px Manrope, sans-serif; text-decoration: none; white-space: nowrap; }
+    .hero { display: grid; grid-template-columns: .92fr 1.08fr; min-height: 520px; padding: 48px 0 58px; gap: 44px; align-items: center; }
+    .eyebrow { display: flex; align-items: center; gap: 10px; margin: 0 0 22px; color: var(--green); font-size: 12px; font-weight: 700; text-transform: uppercase; }
+    .eyebrow::before { content: ""; width: 24px; height: 2px; background: var(--green); }
+    h1, h2, h3, p { margin-top: 0; }
+    h1, h2, h3 { font-family: Manrope, sans-serif; }
+    h1 { max-width: 550px; margin-bottom: 22px; font-size: 58px; line-height: 1.04; letter-spacing: 0; }
+    h1 span { color: var(--green); }
+    .hero-copy { max-width: 435px; margin-bottom: 30px; color: var(--muted); font-size: 17px; line-height: 1.65; }
+    .actions { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; }
+    .button { display: inline-flex; min-height: 52px; align-items: center; justify-content: center; padding: 0 22px; border: 1px solid var(--green); border-radius: 3px; background: var(--green); color: white; font-weight: 700; text-decoration: none; transition: background .2s, color .2s, transform .2s; }
+    .button:hover { transform: translateY(-2px); background: #193e31; }
+    .button.secondary { background: transparent; color: var(--green); }
+    .button.secondary:hover { background: var(--green); color: white; }
+    .hero-photo { position: relative; min-height: 380px; aspect-ratio: 3 / 2; overflow: hidden; border-radius: 4px; background: #c6cbc1; }
+    .hero-photo img { position: absolute; width: 100%; height: 100%; object-fit: cover; }
+    .photo-tag { position: absolute; right: 18px; bottom: 18px; padding: 11px 15px; background: var(--lime); color: var(--ink); font-size: 13px; font-weight: 700; }
+    .services { padding: 62px 0 72px; background: var(--white); }
+    .section-head { display: flex; justify-content: space-between; align-items: end; gap: 30px; margin-bottom: 34px; }
+    h2 { margin-bottom: 0; font-size: 42px; line-height: 1.12; }
+    .section-note { max-width: 350px; margin-bottom: 3px; color: var(--muted); font-size: 15px; line-height: 1.55; }
+    .service-grid { display: grid; grid-template-columns: repeat(4, 1fr); border-top: 1px solid var(--line); border-left: 1px solid var(--line); }
+    .service { min-height: 178px; padding: 22px 20px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+    .service-num { display: block; margin-bottom: 28px; color: var(--green); font-size: 12px; font-weight: 700; }
+    .service h3 { margin-bottom: 9px; font-size: 18px; line-height: 1.28; }
+    .service p { margin-bottom: 0; color: var(--muted); font-size: 14px; line-height: 1.5; }
+    .equipment { padding: 70px 0 78px; }
+    .equipment-head { display: flex; align-items: end; justify-content: space-between; gap: 24px; margin-bottom: 28px; }
+    .equipment-head p { max-width: 390px; margin-bottom: 3px; color: var(--muted); font-size: 15px; line-height: 1.6; }
+    .gallery { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
+    .gallery figure { position: relative; aspect-ratio: 4 / 3; margin: 0; overflow: hidden; background: white; }
+    .gallery img { width: 100%; height: 100%; padding: 14px 14px 60px; object-fit: contain; }
+    .gallery figcaption { position: absolute; right: 0; bottom: 0; left: 0; display: grid; gap: 5px; padding: 42px 20px 17px; background: linear-gradient(transparent, rgb(13 25 20 / 75%)); color: white; font: 600 15px Manrope, sans-serif; }
+    .gallery figcaption small { font: 400 11px "DM Sans", sans-serif; }
+    .gallery figcaption a { color: white; }
+    .contact { padding: 58px 0; background: var(--green); color: white; }
+    .contact-inner { display: flex; align-items: center; justify-content: space-between; gap: 32px; }
+    .contact h2 { max-width: 600px; margin-bottom: 10px; }
+    .contact p { margin-bottom: 0; color: #d0ded4; font-size: 15px; }
+    .contact .button { flex: 0 0 auto; border-color: var(--lime); background: var(--lime); color: var(--ink); }
+    .contact .button:hover { background: white; border-color: white; }
+    footer { padding: 22px 0; background: #193e31; color: #d0ded4; font-size: 13px; }
+    .footer-inner { display: flex; justify-content: space-between; gap: 18px; }
+    @media (max-width: 820px) {
+      .nav-links { display: none; }
+      .hero { grid-template-columns: 1fr; gap: 30px; padding-top: 46px; }
+      .hero-photo { min-height: 0; }
+      h1 { font-size: 48px; }
+      h2 { font-size: 36px; }
+      .service-grid { grid-template-columns: repeat(2, 1fr); }
+      .equipment-head, .section-head { align-items: start; flex-direction: column; }
+    }
+    @media (max-width: 540px) {
+      .wrap { width: min(100% - 32px, 1160px); }
+      .topbar { height: 70px; }
+      .brand { font-size: 14px; }
+      .brand-mark { width: 34px; height: 34px; }
+      .phone { font-size: 13px; }
+      .hero { min-height: auto; padding: 42px 0; }
+      h1 { font-size: 40px; }
+      h2 { font-size: 30px; }
+      .hero-copy { font-size: 16px; }
+      .hero-photo { aspect-ratio: 4 / 3; }
+      .services, .equipment { padding: 48px 0; }
+      .service-grid { grid-template-columns: 1fr; }
+      .service { min-height: 145px; }
+      .service-num { margin-bottom: 18px; }
+      .gallery { grid-template-columns: 1fr; }
+      .actions { align-items: stretch; flex-direction: column; }
+      .actions .button { width: 100%; }
+      .contact { padding: 44px 0; }
+      .contact-inner { align-items: start; flex-direction: column; }
+      .footer-inner { flex-direction: column; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <nav class="nav wrap" aria-label="Основная навигация">
+      <a class="brand" href="#top"><span class="brand-mark" aria-hidden="true">Т</span><span>ТАХОГРАФЫ<br>И СЕРВИС</span></a>
+      <div class="nav-links"><a href="#services">Услуги</a><a href="#equipment">Оборудование</a><a href="#contact">Контакты</a></div>
+      <a class="phone" href="tel:+79186553082">+7 918 655-30-82</a>
+    </nav>
+  </header>
+  <main id="top">
+    <section class="hero wrap">
+      <div>
+        <p class="eyebrow">Решения для грузового транспорта</p>
+        <h1>Тахографы.<br><span>Точно по делу.</span></h1>
+        <p class="hero-copy">Продажа тахографов, настройка и сервисное обслуживание. Поможем подобрать оборудование и подготовить автомобиль к техосмотру.</p>
+        <div class="actions"><a class="button" href="tel:+79186553082">Позвонить</a><a class="button secondary" href="#services">Наши услуги</a><a class="button secondary" href="https://www.avito.ru/severskaya/sport_i_otdyh/tahograf_4729709294" target="_blank" rel="noopener noreferrer">Объявление на Авито</a></div>
+      </div>
+      <div class="hero-photo"><img src="https://images.unsplash.com/photo-1519003722824-194d4455a60c?auto=format&fit=crop&w=1400&q=85" alt="Грузовой автомобиль на дороге"><span class="photo-tag">Продажа · Калибровка · Ремонт</span></div>
+    </section>
+    <section class="services" id="services">
+      <div class="wrap">
+        <div class="section-head"><div><p class="eyebrow">Чем поможем</p><h2>Все для работы<br>тахографа</h2></div><p class="section-note">Подберем подходящее решение для вашего автомобиля и поможем с обслуживанием оборудования.</p></div>
+        <div class="service-grid">
+          <article class="service"><span class="service-num">01 / ПРОДАЖА</span><h3>Новые тахографы</h3><p>Подбор оборудования под ваш транспорт.</p></article>
+          <article class="service"><span class="service-num">02 / ПРОДАЖА</span><h3>Тахографы б/у</h3><p>Рабочее оборудование по доступной цене.</p></article>
+          <article class="service"><span class="service-num">03 / СЕРВИС</span><h3>Калибровка и ремонт</h3><p>Настройка, диагностика и восстановление.</p></article>
+          <article class="service"><span class="service-num">04 / АРЕНДА</span><h3>Для техосмотра</h3><p>Тахограф в аренду на время прохождения техосмотра.</p></article>
+        </div>
+      </div>
+    </section>
+    <section class="equipment" id="equipment">
+      <div class="wrap">
+        <div class="equipment-head"><div><p class="eyebrow">Оборудование и транспорт</p><h2>Техника в работе</h2></div><p>Тахографы и сервис для коммерческого транспорта. Позвоните, чтобы уточнить наличие и подобрать оборудование.</p></div>
+        <div class="gallery">
+          <figure><img src="https://upload.wikimedia.org/wikipedia/commons/d/d8/Digital_tachograph-yazaki_DTG2.jpg" alt="Цифровой тахограф Yazaki DTG2" loading="lazy"><figcaption>Цифровой тахограф<small>Фото <a href="https://commons.wikimedia.org/wiki/File:Digital_tachograph-yazaki_DTG2.jpg" target="_blank" rel="noreferrer">Comyu</a> · <a href="https://creativecommons.org/licenses/by-sa/3.0/" target="_blank" rel="noreferrer">CC BY-SA 3.0</a></small></figcaption></figure>
+          <figure><img src="https://upload.wikimedia.org/wikipedia/commons/7/76/Flat_tachograph.jpg" alt="Аналоговый плоский тахограф" loading="lazy"><figcaption>Аналоговый тахограф<small>Фото <a href="https://commons.wikimedia.org/wiki/File:Flat_tachograph.jpg" target="_blank" rel="noreferrer">Comyu</a> · <a href="https://creativecommons.org/licenses/by-sa/3.0/" target="_blank" rel="noreferrer">CC BY-SA 3.0</a></small></figcaption></figure>
+        </div>
+      </div>
+    </section>
+    <section class="contact" id="contact">
+      <div class="contact-inner wrap">
+        <div><p class="eyebrow" style="color: var(--lime)">Связаться</p><h2>Нужен тахограф или сервис?</h2><p>Позвоните, обсудим задачу и подберем решение.</p></div>
+        <a class="button" href="tel:+79186553082">+7 918 655-30-82</a>
+      </div>
+    </section>
+  </main>
+  <footer><div class="footer-inner wrap"><span>Тахографы и сервис</span><a href="tel:+79186553082">+7 918 655-30-82</a></div></footer>
+</body>
+</html>
